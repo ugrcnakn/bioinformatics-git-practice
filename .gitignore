@@ -1,0 +1,8 @@
+# Raw sequencing data
+data/
+
+# Generated analysis results
+results/
+
+# Log files
+*.log
