@@ -1,48 +1,60 @@
 # Bioinformatics Git Practice
 
-This repository is a small practice project created to learn Git and GitHub through a simple bioinformatics-oriented workflow.
+A small bioinformatics-oriented project created to practice Git, GitHub, repository organization, and reproducible project structure.
 
-## About the Project
+## Project Goal
 
-The main goal of this repository is to practice version control concepts that are commonly used in bioinformatics projects.
+The goal of this repository is to learn how Git and GitHub can be used to manage a simple bioinformatics project.
 
-The repository contains a simple Bash analysis script and examples of Git workflow management.
+The project demonstrates how analysis scripts, small example datasets, documentation, and Git history can be organized while keeping large raw data and generated results outside version control.
 
-## Repository Contents
+## Repository Structure
 
-- `analysis.sh` - Example Bash script used to practice version control
-- `.gitignore` - Defines files and directories that should not be tracked by Git
-- `README.md` - Project documentation
+```text
+bioinformatics-git-practice/
+├── README.md
+├── .gitignore
+├── notes.txt
+├── scripts/
+│   └── analysis.sh
+├── data/
+│   ├── example/
+│   │   └── example.fasta
+│   └── raw/
+├── logs/
+└── results/
+```
 
-## Skills Practiced
+## Directory Description
 
-During this project, the following Git and GitHub concepts are practiced:
+- `scripts/` - Analysis scripts used in the project
+- `data/example/` - Small example data that can be tracked with Git
+- `data/raw/` - Raw sequencing data that should not be tracked
+- `results/` - Generated analysis results
+- `logs/` - Log files produced during analyses
+- `notes.txt` - Simple project notes
 
-- Creating a Git repository
-- Tracking files
-- Staging changes
-- Creating commits
-- Viewing commit history
-- Comparing file versions
-- Working with remote repositories
-- Pushing commits to GitHub
-- Fetching and pulling remote changes
-- Creating branches
-- Merging branches
-- Using `.gitignore`
-- Writing basic project documentation
+## Example Data
 
-## Running the Script
+The repository contains a small example FASTA file:
+
+```text
+data/example/example.fasta
+```
+
+Small example files are useful for testing scripts and demonstrating workflows without storing large sequencing datasets in Git.
+
+## Running the Analysis Script
 
 Run the example Bash script with:
 
 ```bash
-bash analysis.sh
+bash scripts/analysis.sh
 ```
 
-## Example Workflow
+## Git Workflow Practiced
 
-A typical Git workflow used in this repository is:
+This project is used to practice the following workflow:
 
 ```text
 Modify files
@@ -58,19 +70,55 @@ git commit
 git push
 ```
 
+The project also includes practice with:
+
+- Git repositories
+- Commit history
+- Branches
+- Merging
+- Remote repositories
+- Push and pull
+- `.gitignore`
+- README documentation
+- Project directory organization
+
+## Data Management
+
+Large raw sequencing files should generally not be stored directly in this repository.
+
+The `.gitignore` file is configured so that raw data, generated results, and log files can remain on the local computer without being tracked by Git.
+
+For this project:
+
+```text
+data/raw/  -> ignored
+results/   -> ignored
+*.log      -> ignored
+```
+
+Small example datasets under:
+
+```text
+data/example/
+```
+
+can still be tracked and shared through GitHub.
+
 ## Bioinformatics Connection
 
-Version control is important in bioinformatics because analysis scripts and pipelines change over time.
+Bioinformatics analyses often involve large datasets and multiple analysis steps.
 
-Git helps keep track of:
+Git is mainly useful for tracking the parts of the project that define how the analysis is performed, such as:
 
 - Bash scripts
-- Python and R scripts
+- Python scripts
+- R scripts
 - Workflow files
 - Configuration files
-- Analysis documentation
+- Documentation
+- Small reproducible example datasets
 
-Large raw sequencing files such as FASTQ and BAM files are generally not stored directly in a normal Git repository. Instead, the repository usually contains the scripts and instructions required to reproduce the analysis.
+This makes it easier to understand how an analysis changed over time and helps make computational work more reproducible.
 
 ## Author
 
